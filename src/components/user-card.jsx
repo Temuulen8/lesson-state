@@ -1,6 +1,6 @@
 import React from "react";
 
-const UserCard = () => {
+const UserCard = ({ userImg, firstName }) => {
   return (
     <div className="p-5 flex gap-4 items-cemter">
       <img className="w-10 h-10 rounded-full" src={userImg} alt="" />
