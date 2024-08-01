@@ -118,6 +118,12 @@ export default function Home() {
     setUsers(findUser);
   };
 
+  const deleteUser = (userId) => {
+    console.log("userId", userId);
+    const deleteUser = users.filter((user) => user.id !== userId);
+    setUsers(deleteUser);
+  };
+
   return (
     <main className="flex flex-col items-center">
       <h1 className="text-5xl text-gray-950">User find application </h1>
@@ -134,7 +140,12 @@ export default function Home() {
 
         {users?.map((user) => {
           return (
-            <UserCard userImg={user.imageUrl} firstName={user.firstName} />
+            <UserCard
+              userImg={user.imageUrl}
+              firstName={user.firstName}
+              userId={user.id}
+              deleteUser={deleteUser}
+            />
           );
         })}
         {!profiles && <p>Hooson</p>}
